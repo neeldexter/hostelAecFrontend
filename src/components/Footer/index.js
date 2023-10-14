@@ -7,8 +7,8 @@ function Footer() {
 	const classes = useStyles();
 
 	const handleClick = (event) => {
-		let site = event.target.getAttribute("id");
-		window.open(urls[site], "_blank");
+		// let site = event.target.getAttribute("id");
+		// window.open(urls[site], "_blank");
 	};
 
 	return (

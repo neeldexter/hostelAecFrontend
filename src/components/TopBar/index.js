@@ -18,7 +18,7 @@ function TopBar() {
         <img className={classes.logo} src={AAU_LOGO} alt="AAU LOGO" />
       </Link> */}
       <div className={classes.headerTitle}>
-        <Typography variant="h5" className={classes.titleText} >HOSTEL ALUMNI CONNECT</Typography>
+        <Typography variant="h5" className={classes.titleText} >HOSTEL 1 ALUMNI CONNECT</Typography>
       </div>
       <div className={classes.navItems}>
         <Typography className={classes.title} variant="h6" >
@@ -27,7 +27,7 @@ function TopBar() {
           </Link>
         </Typography>
         <Typography className={classes.title} variant="h6" >
-          <Link to="/about-us" className={classes.link}>
+          <Link to="#" className={classes.link}>
             About
           </Link>
         </Typography>
@@ -37,7 +37,7 @@ function TopBar() {
           </Link>
         </Typography>
         <Typography className={classes.title} variant="h6" >
-          <Link to="/contact-us" className={classes.link}>
+          <Link to="#" className={classes.link}>
             Contact Us
           </Link>
         </Typography>
@@ -47,7 +47,7 @@ function TopBar() {
           </Link>
         </Typography>
         <Typography className={classes.title} variant="h6" >
-          <Link to="/clients" className={classes.link}>
+          <Link to="#" className={classes.link}>
             Login
           </Link>
         </Typography>

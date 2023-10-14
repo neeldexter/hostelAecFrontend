@@ -49,7 +49,7 @@ function TopBarMobile() {
             className={classes.lineItem}
             variant="h5"
             align="left"
-            onClick={() => navigateTo("/about-us")}
+            onClick={() => navigateTo("/")}
           >
             Home
           </Typography>
@@ -57,7 +57,7 @@ function TopBarMobile() {
             className={classes.lineItem}
             variant="h5"
             align="left"
-            onClick={() => navigateTo("/partners")}
+            onClick={() => navigateTo("#")}
           >
            About us
           </Typography>
@@ -65,7 +65,7 @@ function TopBarMobile() {
             className={classes.lineItem}
             variant="h5"
             align="left"
-            onClick={() => navigateTo("/clients")}
+            onClick={() => navigateTo("/registration")}
           >
             Registration
           </Typography>
@@ -75,15 +75,15 @@ function TopBarMobile() {
             align="left"
             onClick={() => navigateTo("/careers")}
           >
-            Sponsorship
+               Contact us
           </Typography>
           <Typography
             className={classes.lineItem}
             variant="h5"
             align="left"
-            onClick={() => navigateTo("/contact-us")}
+            onClick={() => navigateTo("#")}
           >
-            Contact 
+            Login
           </Typography>
         </div>
       </Drawer>

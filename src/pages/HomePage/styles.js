@@ -609,74 +609,88 @@ export const useStyles = makeStyles(theme => ({
 
 
 
-  homeTitle : {
-    textAlign:"center",
-    fontWeight:"800",
-    fontSize:"2.7em"
+  homeTitle: {
+    textAlign: "center",
+    fontWeight: "800",
+    fontSize: "2.7em",
+    padding: "1em 6em",
+    ["@media (max-width:767px)"]: {
+      fontSize: "2.1em",
+      padding: "2.5em 1em 0em 1em",
+    },
   },
-  homeSubtitle:{
-    textAlign:"-webkit-center",
-    fontSize:"1.2em",
-    marginTop:"1.5em"
+  homeSubtitle: {
+    textAlign: "-webkit-center",
+    fontSize: "1.2em",
+    marginTop: "1.5em"
   },
-  headerSec:{
-    padding:"2em 6em"
+  headerSec: {
+    padding: "2em 6em",
+    ["@media (max-width:767px)"]: {
+      padding: "2em",
+      fontSize: ".8em "
+    },
   },
-  videoPart:{
-    display:"flex",
-    justifyContent:"center",
-    padding:"4em"
+  tagline: {
+    color: "#065a62",
+    fontStyle: "italic",
+    fontWeight: "bold"
   },
-  videoTag:{
-    boxShadow:"5px 5px 4px 1px #065a62",
-    border:"2px solid #065a62",
-    borderRadius:"5px"
+  videoPart: {
+    display: "flex",
+    justifyContent: "center",
+    padding: "4em"
   },
-  snap:{
-    fontWeight:"bold",
-    padding:"1em"
+  videoTag: {
+    boxShadow: "5px 5px 4px 1px #065a62",
+    border: "2px solid #065a62",
+    borderRadius: "5px"
   },
-  imgGal:{
-    padding:"3em",
-    display:"flex",
-    justifyContent:"center",
-    alignItems:"center"
+  snap: {
+    fontWeight: "bold",
+    padding: "1em"
   },
-  mainCard:{
-    padding:"1.2em",
-    boxShadow:"5px 5px 4px 1px #065a62",
-    border:"2px solid #065a62",
-    borderRadius:"5px",
-    background:"white",
-    height:"95%",
+  imgGal: {
+    padding: "3em",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
-  imgCard:{
-    display:"flex",
+  mainCard: {
+    padding: "1.2em",
+    boxShadow: "5px 5px 4px 1px #065a62",
+    border: "2px solid #065a62",
+    borderRadius: "5px",
+    background: "white",
+    height: "95%",
+  },
+  imgCard: {
+    display: "flex",
     // justifyContent:"center",
     // alignItems:"center",
-    flexDirection:"column",
-    borderBottom:"1px solid #065a62",
-    padding:".5em 0"
+    flexDirection: "column",
+    borderBottom: "1px solid #065a62",
+    padding: ".5em 0"
   },
-  imgCon:{
-    width:"10em",
-    height:"10em",
-    borderRadius:"50%"
+  imgCon: {
+    width: "10em",
+    height: "10em",
+    borderRadius: "50%"
   },
-  name:{
-    textAlign:"left",
-    fontSize:"1.2em",
-    fontWeight:"800"
+  name: {
+    textAlign: "left",
+    fontSize: "1.2em",
+    fontWeight: "800"
   },
-  batch:{
-    textAlign:"left",
-    fontSize:"1.2em"
+  batch: {
+    textAlign: "left",
+    fontSize: "1.2em"
   },
-  titleAuth:{
-    padding:".5em 0"
+  titleAuth: {
+    padding: ".5em 0"
   },
-  cont:{
-    fontSize:".9em",
-    textAlign:"justify"
+  cont: {
+    fontSize: ".9em",
+    textAlign: "justify"
   }
 }));

@@ -55,7 +55,12 @@ export const useStyles = makeStyles(() => ({
         background: "#072e32",
         borderRadius: "5px",
         padding: "1em",
-        color: "white"
+        color: "white",
+        display:"block",
+        margin:"auto",
+        maxWidth:"750px",
+        height: "40vw",
+    overflowY: "scroll"
     },
     modPicSection: {
         display: "flex",

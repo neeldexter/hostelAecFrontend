@@ -83,7 +83,7 @@ function Home() {
       </Grid>
       <Grid item xs={12}>
         <div className={classes.videoPart}>
-          <video className={classes.videoTag} width="700" height="auto" poster={hostelPic} preload="metadata" controls>
+          <video className={classes.videoTag} width="1000" height="550" poster={hostelPic} preload="metadata" controls>
             <source src={videoAd} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -93,7 +93,7 @@ function Home() {
         <Typography variant='h4' align="center" className={classes.snap}>Snapshots...</Typography>
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
-        <Typography variant="h4">Hostel 1 during the golden hour...</Typography>
+        <Typography variant="h4" className={classes.tagline}>Hostel 1 during the golden hour...</Typography>
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
         <img src={pic1} className={classes.videoTag} width="100%" alt="pic" />
@@ -102,10 +102,10 @@ function Home() {
         <img src={pic2} className={classes.videoTag} width="100%" alt="pic2" />
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
-        <Typography variant="h4">On a lazy winter day...</Typography>
+        <Typography variant="h4" className={classes.tagline}>On a lazy winter day...</Typography>
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
-        <Typography variant="h4">Our very own eden, ANKURAN...</Typography>
+        <Typography variant="h4" className={classes.tagline}>Our very own eden, ANKURAN...</Typography>
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
         <img src={pic3} className={classes.videoTag} width="100%" alt="p  ic3" />
@@ -115,10 +115,10 @@ function Home() {
         <img src={pic4} className={classes.videoTag} width="100%" alt="pic2" />
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
-        <Typography variant="h4">Hostel decoration during diwali...</Typography>
+        <Typography variant="h4" className={classes.tagline}>Hostel decoration during diwali...</Typography>
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
-        <Typography variant="h4">The evergreen Silent Storm...</Typography>
+        <Typography variant="h4" className={classes.tagline}>The evergreen Silent Storm...</Typography>
       </Grid>
       <Grid item xs={12} md={5} lg={6} xl={6} className={classes.imgGal}>
         <img src={pic5} className={classes.videoTag} width="100%" alt="p  ic3" />

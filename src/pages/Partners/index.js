@@ -78,7 +78,7 @@ function Registration() {
   };
 
   const submitReg = async(values) => {
-    let dataVal = await axios.post("http://localhost:5001/api/alumni",values)
+    let dataVal = await axios.post("https://hostel-alumni-m957minwo-neelams-projects.vercel.app/api/alumni",values)
     if(dataVal) {
       setOpen(true)
     }
@@ -163,7 +163,7 @@ function Registration() {
               <TextField
                 fullWidth
                 variant="outlined"
-                label="Batch Year"
+                label="Passout Year"
                 name="batchYear"
                 onChange={formik.handleChange}
                 value={formik.values.batchYear}
@@ -172,8 +172,8 @@ function Registration() {
               />
             </Grid>
             <Grid item xs={12} md={12} lg={4} xl={4} className={classes.fieldDes} >
-          <FormControl fullWidth>
-            <InputLabel id="department-label">Department</InputLabel>
+          <FormControl fullWidth >
+            <InputLabel id="department-label" style={{paddingLeft:"1em"}}>Department</InputLabel>
             <Select
               labelId="department-label"
               variant="outlined"

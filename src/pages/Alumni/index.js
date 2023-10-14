@@ -6,6 +6,7 @@ import humanLogo from "../../images/humanLogo.png"
 import Modal from '@mui/material/Modal';
 import Loader from '../../components/Loader';
 import axios from 'axios';
+import ClearIcon from '@mui/icons-material/Clear';
 
 
 
@@ -17,9 +18,13 @@ const Alumni = () => {
     const [isEditable, setIsEditable] = useState(false);
     const [search, setSearch] = useState("");
     const [alumniList, setAlumniList] = useState([])
+    const [alumniModalData, setAlumniModalData] = useState({})
 
 
-    const handleOpen = () => setOpen(true);
+    const handleOpen = (item) => {
+        setAlumniModalData(item)
+        setOpen(true);
+    }
     const handleClose = () => setOpen(false);
 
 
@@ -99,7 +104,7 @@ const Alumni = () => {
                                     <Typography className={classes.textInside}>Email :  {item?.email}   </Typography>
                                     <Typography className={classes.textInside}>Contact No. :   {item?.phone}   </Typography>
                                     <div className={classes.seeMore}>
-                                        <Button variant="contained" color="primary" fullWidth className={classes.seeButn} onClick={handleOpen}>VIEW DETAILS</Button>
+                                        <Button variant="contained" color="primary" fullWidth className={classes.seeButn} onClick={() => handleOpen(item)}>VIEW DETAILS</Button>
                                     </div>
                                 </div>
                             </Grid>)}
@@ -112,82 +117,89 @@ const Alumni = () => {
                         aria-describedby="modal-modal-description"
                     >
                         <Grid container style={{ padding: "2em" }}>
-                            <Grid container item xs={12} className={classes.modalDes}>
-                                <Grid item xs={12}>
-
-                                    <Typography varaint="h5" className={classes.modHead}>Alumni Details   </Typography>
-                                </Grid>
-                                <Grid item xs={12} md={12} lg={4} xl={4} className={classes.modPicSection}>
-                                    <img className={classes.contactImgModal} src={alumniPic} alt="alumniPicMod" />
-                                    <div className={classes.parentCardMod}>
-                                        <Typography className={classes.textInsideMod}>Name : <span> Neelam Das</span>  </Typography>
-                                        <Typography className={classes.textInsideMod}>Batch : 2018   </Typography>
-                                        <Typography className={classes.textInsideMod}>Department : Computer Science   </Typography>
-                                        <Typography className={classes.textInsideMod}>Email : neelam123@gmail.com   </Typography>
-                                        <Typography className={classes.textInsideMod}>Contact No. : 9876543210  </Typography>
-                                    </div>
-                                </Grid>
-                                <Grid item xs={12} md={12} lg={4} xl={4} className={classes.modPicSection}>
-                                    <div style={{ padding: ".5em", marginTop: "1em" }}>
-                                        <div className={classes.addresParent}>
-                                            <div className={classes.addressTitle}>
-                                                Work Information
-                                            </div>
+                            <Box className={classes.modalDes}>
+                                <Grid container item xs={12} >
+                                    <Grid item xs={12}>
+                                        <div style={{ textAlign: "right", cursor: "pointer" }} onClick={handleClose}>
+                                            <ClearIcon />
                                         </div>
-                                        <div className={classes.workAdd}>
+                                    </Grid>
+                                    <Grid item xs={12}>
 
-                                            <Typography className={classes.textInsideMod}>Organisation  : Tata Constultancy Services [TCS] </Typography>
-                                            <Typography className={classes.textInsideMod}>From : 2020  </Typography>
-                                            <Typography className={classes.textInsideMod}>Designation : Technical Lead   </Typography>
-                                            <Typography className={classes.textInsideMod}>Location : Bengaluru , India  </Typography>
-
+                                        <Typography varaint="h5" className={classes.modHead}>Alumni Details   </Typography>
+                                    </Grid>
+                                    <Grid item xs={12} md={12} lg={9} xl={9} className={classes.modPicSection} style={{ paddingLeft: "3em" }}>
+                                        <img className={classes.contactImgModal} src={alumniPic} alt="alumniPicMod" />
+                                        <div className={classes.parentCardMod}>
+                                            <Typography className={classes.textInsideMod}>Name : <span>{alumniModalData?.firstName} {alumniModalData?.lastName}</span>  </Typography>
+                                            <Typography className={classes.textInsideMod}>Batch : {alumniModalData?.batchYear}   </Typography>
+                                            <Typography className={classes.textInsideMod}>Department : {alumniModalData?.department}   </Typography>
+                                            <Typography className={classes.textInsideMod}>Email : n{alumniModalData?.email}   </Typography>
+                                            <Typography className={classes.textInsideMod}>Contact No. : {alumniModalData?.phone}  </Typography>
                                         </div>
-                                    </div>
-                                </Grid>
-                                <Grid item xs={12} md={12} lg={4} xl={4} className={""}>
-                                    <div style={{ padding: ".5em", marginTop: "1em" }}>
-                                        <div className={classes.addresParent}>
-                                            <div className={classes.addressTitle}>
-                                                Present Address
-                                            </div>
-                                        </div>
-                                        <div className={classes.workAdd}>
-                                            <div>
-                                                <div>
-                                                    <Typography className={classes.textInsideMod}>District : Kamrup </Typography>
-                                                    <Typography className={classes.textInsideMod}>PIN : 781002  </Typography>
-                                                    <Typography className={classes.textInsideMod}>P.O. : Chandmari   </Typography>
-                                                    <Typography className={classes.textInsideMod}>State : Assam , India  </Typography>
+                                    </Grid>
+                                    <Grid item xs={12} md={12} lg={6} xl={6} className={classes.modPicSection}>
+                                        <div style={{ padding: ".5em", marginTop: "2em" }}>
+                                            <div className={classes.addresParent}>
+                                                <div className={classes.addressTitle}>
+                                                    Work Information
                                                 </div>
+                                            </div>
+                                            <div className={classes.workAdd}>
+
+                                                <Typography className={classes.textInsideMod}>Organisation  :{alumniModalData?.workInfo?.orgName} </Typography>
+                                                <Typography className={classes.textInsideMod}>From : {alumniModalData?.workInfo?.joinedYear}  </Typography>
+                                                <Typography className={classes.textInsideMod}>Designation : {alumniModalData?.workInfo?.designation}   </Typography>
+                                                <Typography className={classes.textInsideMod}>Location : {alumniModalData?.workInfo?.location}  </Typography>
 
                                             </div>
                                         </div>
-                                    </div>
-                                </Grid>
-                                <Grid item xs={12} md={12} lg={4} xl={4} style={{ marginTop: "2em" }}>
-                                    <div style={{ padding: ".5em", marginTop: "1em" }}>
-                                        <div className={classes.addresParent}>
-                                            <div className={classes.addressTitle}>
-                                                Present Addssress
-                                            </div>
-                                        </div>
-                                        <div className={classes.workAdd}>
-                                            <div>
-                                                <div>
-                                                    <Typography className={classes.textInsideMod}>District : Kamrup </Typography>
-                                                    <Typography className={classes.textInsideMod}>PIN : 781002  </Typography>
-                                                    <Typography className={classes.textInsideMod}>P.O. : Chandmari   </Typography>
-                                                    <Typography className={classes.textInsideMod}>State : Assam , India  </Typography>
+                                    </Grid>
+                                    <Grid item xs={12} md={12} lg={5} xl={5}>
+                                        <div style={{ padding: ".5em", marginTop: "2em" }}>
+                                            <div className={classes.addresParent}>
+                                                <div className={classes.addressTitle}>
+                                                    Present Address
                                                 </div>
+                                            </div>
+                                            <div className={classes.workAdd}>
+                                                <div>
+                                                    <div>
+                                                        <Typography className={classes.textInsideMod}>PIN : {alumniModalData?.currentAddress?.pin}  </Typography>
+                                                        <Typography className={classes.textInsideMod}>P.O. : {alumniModalData?.currentAddress?.postOffice}   </Typography>
+                                                        <Typography className={classes.textInsideMod}>State : {alumniModalData?.currentAddress?.state} </Typography>
+                                                        <Typography className={classes.textInsideMod}>Country : {alumniModalData?.currentAddress?.country} </Typography>
+                                                    </div>
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Grid>
+                                    <Grid item xs={12} md={12} lg={5} xl={5} style={{ marginTop: "1em", marginLeft: "3.5em" }}>
+                                        <div style={{ padding: ".5em", marginTop: "1em" }}>
+                                            <div className={classes.addresParent}>
+                                                <div className={classes.addressTitle}>
+                                                    Permanent Address
+                                                </div>
+                                            </div>
+                                            <div className={classes.workAdd}>
+                                                <div>
+                                                    <div>
+                                                        <Typography className={classes.textInsideMod}>PIN : {alumniModalData?.permanentAddress?.pin}  </Typography>
+                                                        <Typography className={classes.textInsideMod}>P.O. : {alumniModalData?.permanentAddress?.postOffice}   </Typography>
+                                                        <Typography className={classes.textInsideMod}>State : {alumniModalData?.permanentAddress?.state} </Typography>
+                                                        <Typography className={classes.textInsideMod}>Country : {alumniModalData?.permanentAddress?.country} </Typography>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        {/* {!isEditable && <Button variant="contained" fullWidth style={{ marginTop: "1em" }}>EDIT</Button>} */}
+                                    </Grid>
                                 </Grid>
-                                <Grid item xs={12}>
-                                    {!isEditable && <Button variant="contained" fullWidth style={{ marginTop: "1em" }}>EDIT</Button>}
-                                </Grid>
-                            </Grid>
+                            </Box>
                         </Grid>
                     </Modal>
 
