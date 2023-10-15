@@ -8,6 +8,7 @@ import Client from "./pages/Client";
 import Registration from "./pages/Partners";
 import About from "./pages/AboutUs";
 import Alumni from "./pages/Alumni";
+import LoginForm from "./components/Login";
 import { ContactPhoneTwoTone } from "@material-ui/icons";
 const ICTRouter = () => {
   return (
@@ -69,10 +70,10 @@ const ICTRouter = () => {
           exact
         />
         <Route
-          path="/clients"
+          path="/login"
           element={
             <Homecontainer>
-              <Client />
+              <LoginForm />
             </Homecontainer>
           }
           exact

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fec15a50.css",
-    "main.js": "/static/js/main.0717e16c.js",
+    "main.js": "/static/js/main.9128f88d.js",
     "static/js/787.4d5f76ff.chunk.js": "/static/js/787.4d5f76ff.chunk.js",
     "static/media/videoAd.mp4": "/static/media/videoAd.3a30c82369448fe9f864.mp4",
     "static/media/aboutVideo.mp4": "/static/media/aboutVideo.1bbf088df418f8025785.mp4",
@@ -45,6 +45,7 @@
     "static/media/cayman.svg": "/static/media/cayman.53a310bdcb536d9640dddd796b66b3d3.svg",
     "static/media/ccad-1.svg": "/static/media/ccad-1.5bcbb416543a7ad2405adfda96483c6c.svg",
     "static/media/agartala.avif": "/static/media/agartala.0c284c06438e43a6476c.avif",
+    "static/media/logo.jpg": "/static/media/logo.5f96efe6b317d9e12d36.jpg",
     "static/media/corniche.svg": "/static/media/corniche.b0a1fc601b1aebccbc85ced23caa5827.svg",
     "static/media/mohoman.svg": "/static/media/mohoman.1992d7283804900118a04cfb47929a7f.svg",
     "static/media/nsh.svg": "/static/media/nsh.41a1469796b036a616b74b1de08cfa1c.svg",
@@ -73,11 +74,11 @@
     "index.html": "/index.html",
     "static/media/close.svg": "/static/media/close.31628d4876c66e6ce6453d17291be2ca.svg",
     "main.fec15a50.css.map": "/static/css/main.fec15a50.css.map",
-    "main.0717e16c.js.map": "/static/js/main.0717e16c.js.map",
+    "main.9128f88d.js.map": "/static/js/main.9128f88d.js.map",
     "787.4d5f76ff.chunk.js.map": "/static/js/787.4d5f76ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fec15a50.css",
-    "static/js/main.0717e16c.js"
+    "static/js/main.9128f88d.js"
   ]
 }

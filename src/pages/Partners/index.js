@@ -1,4 +1,4 @@
-import { Typography, Grid, Button, TextField, MenuItem, FormControl, InputLabel,Select } from "@material-ui/core";
+import { Typography, Grid, Button, TextField, MenuItem, FormControl, InputLabel, Select } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import { useStyles } from "./styles";
 import Footer from "../../components/Footer/index.js";
@@ -7,16 +7,23 @@ import * as Yup from 'yup';
 import { validationSchema } from "../../schemas";
 import CustomizedSnackbars from "../../components/Toast";
 import axios from "axios";
+import { DatePicker, InlineDatePicker } from "material-ui-pickers";
+
 
 function Registration() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [failCheck, setFailCheck] = useState(false);
+  const [text,setText] =useState("")
   const departments = [
     'Computer Science',
     'Electrical',
     'Civil Engineering',
     'Instrumentation',
     'Mechanical',
+    'Industrial and Production',
+    'MCA',
+    'Electronics & Telecommunications'
   ];
 
   const initialValues = {
@@ -40,12 +47,12 @@ function Registration() {
       country: ''
     },
     batchYear: '',
-    department:'',
-    workInfo:{
-      orgName:'',
-      designation:'',
-      joinedYear:'',
-      location:''
+    department: '',
+    workInfo: {
+      orgName: '',
+      designation: '',
+      joinedYear: '',
+      location: ''
     },
     password: '',
     confirmPassword: ''
@@ -59,13 +66,13 @@ function Registration() {
 
   const formik = useFormik({
     initialValues,
-     validationSchema,
+    validationSchema,
     onSubmit: (values, { resetForm }) => {
       // Handle form submission here
       console.log(values);
       // setOpen(true)
-      submitReg(values)
-      resetForm();
+      submitReg(values , resetForm)
+     
     },
   });
 
@@ -77,27 +84,40 @@ function Registration() {
     setOpen(false);
   };
 
-  const submitReg = async(values) => {
-    let dataVal = await axios.post("https://hostel-alumni-m957minwo-neelams-projects.vercel.app/api/alumni",values)
-    if(dataVal) {
-      setOpen(true)
+  const submitReg = async (values, resetForm) => {
+    try {
+      let dataVal = await axios.post("https://hostel-alumni-m957minwo-neelams-projects.vercel.app/api/alumni", values)
+      if (dataVal.status==201) {
+        setOpen(true)
+        setFailCheck(false)
+      }
+      console.log({ dataVal })
+      resetForm()
     }
-    console.log({dataVal})
-
+    catch (err) {
+      console.log("error", err.response?.data?.error)
+      setText(err.response?.data?.error)
+      setOpen(true)
+      setFailCheck(true)
+    }
   }
 
+  const Years = []
+  for (let i = 1960; i < 2020; i++) {
+    Years.push(i)
+  }
 
-  useEffect(()=>{
+  useEffect(() => {
 
-  },[])
+  }, [])
 
   return (
-    <Grid container  style={{padding:"1em 5em"}}>
+    <Grid container style={{ padding: "1em 5em" }}>
       <Grid item xs={12}  >
-        <CustomizedSnackbars open={open} setOpen={setOpen} handleClose={handleClose}/>
+       {failCheck ?  <CustomizedSnackbars open={open} setOpen={setOpen} severity="error" msg={text} handleClose={handleClose} />:<CustomizedSnackbars open={open} setOpen={setOpen} severity="success"  msg={"Your registration has been initiated . Administrator will review and update soon. !!"} handleClose={handleClose} />}
         <Typography variant="h5" className={classes.regTitle}> Register Your Information</Typography>
       </Grid>
-      <Grid item xs={12} style={{padding:"1.5em" ,boxShadow:"0px 2px 8px 0px #2a85aa",borderRadius:"10px" }}>
+      <Grid item xs={12} style={{ padding: "1.5em", boxShadow: "0px 2px 8px 0px #2a85aa", borderRadius: "10px" }}>
         <form onSubmit={formik.handleSubmit}>
           <Grid container>
             <Grid item xs={12} md={12} lg={4} xl={4} className={classes.fieldDes} >
@@ -160,44 +180,69 @@ function Registration() {
               />
             </Grid>
             <Grid item xs={12} md={12} lg={4} xl={4} className={classes.fieldDes} >
-              <TextField
+              {/* <TextField
                 fullWidth
                 variant="outlined"
-                label="Passout Year"
+                label="Batch Year"
                 name="batchYear"
                 onChange={formik.handleChange}
                 value={formik.values.batchYear}
                 error={formik.touched.batchYear && Boolean(formik.errors.batchYear)}
                 helperText={formik.touched.batchYear && formik.errors.batchYear}
-              />
+              /> */}
+
+              <FormControl fullWidth >
+                <InputLabel id="batchYear-label" style={{ paddingLeft: "1em" }}>Passout Year</InputLabel>
+                <Select
+                  labelId="batchYear-label"
+                  variant="outlined"
+                  id="batchYear"
+                  name="batchYear"
+                  value={formik.values.batchYear}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.batchYear &&
+                    Boolean(formik.errors.batchYear)
+                  }
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {Years.map((year) => (
+                    <MenuItem key={year} value={year}>
+                      {year}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item xs={12} md={12} lg={4} xl={4} className={classes.fieldDes} >
-          <FormControl fullWidth >
-            <InputLabel id="department-label" style={{paddingLeft:"1em"}}>Department</InputLabel>
-            <Select
-              labelId="department-label"
-              variant="outlined"
-              id="department"
-              name="department"
-              value={formik.values.department}
-              onChange={formik.handleChange}
-              error={
-                formik.touched.department &&
-                Boolean(formik.errors.department)
-              }
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              {departments.map((department) => (
-                <MenuItem key={department} value={department}>
-                  {department}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        
+              <FormControl fullWidth >
+                <InputLabel id="department-label" style={{ paddingLeft: "1em" }}>Department</InputLabel>
+                <Select
+                  labelId="department-label"
+                  variant="outlined"
+                  id="department"
+                  name="department"
+                  value={formik.values.department}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.department &&
+                    Boolean(formik.errors.department)
+                  }
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {departments.map((department) => (
+                    <MenuItem key={department} value={department}>
+                      {department}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+
             <Grid container item xs={12} className={classes.curAdd}>
               <Grid item xs={12} className={classes.currHead}>
                 <Typography variant="body1" className={classes.currDiv}>
