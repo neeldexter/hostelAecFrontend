@@ -13,16 +13,20 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: "4em"
+        margin: "7em 0",
         // minHeight: '58vh',
     },
     formBox: {
         padding: '16px',
         border: '5px solid #065a62',
         backgroundColor: 'white',
-        width: '40%',
+        width: '35%',
         boxShadow: "7px 7px 4px -2px #10727c",
-        borderRadius: "8px"
+        borderRadius: "8px",
+        ["@media(max-width:767px)"]: {
+            width: '80%',
+            marginTop:"2em"
+          },
     },
     logo: {
         // width: '100px', // Adjust as needed

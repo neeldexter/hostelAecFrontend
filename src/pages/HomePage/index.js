@@ -7,7 +7,7 @@ import partner2 from "../../images/aau/partner2.svg";
 import Footer from "../../components/Footer/index.js";
 import { useStyles } from "./styles.js";
 import videoAd from "../../images/aec/videoAd.mp4"
-import hostelPic from "../../images/aec/pic3.jpeg"
+import hostelPic from "../../images/aec/hostelpicThumbnail.png"
 import pic1 from "../../images/aec/pic1.jpg"
 import pic2 from "../../images/aec/pic2.jpeg"
 import pic3 from "../../images/aec/pic3.jpeg"
@@ -124,7 +124,7 @@ function Home() {
         <img src={pic5} className={classes.videoTag} width="100%" alt="p  ic3" />
       </Grid>
 
-      <Grid container style={{ padding: "2em", background: "linear-gradient(90deg, rgba(111,108,118,1) 0%, rgba(9,107,121,1) 43%, rgba(0,212,255,1) 100%)" }}>
+      <Grid container  className={classes.article} >
         <Grid item xs={12}>
           <Typography variant="h4" align="center" className={classes.snap} style={{color:"#ffffff"}}>Few words from our ex-boarders....</Typography>
         </Grid>

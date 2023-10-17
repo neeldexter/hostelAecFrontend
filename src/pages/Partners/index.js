@@ -46,7 +46,7 @@ function Registration() {
       postOffice: '',
       country: ''
     },
-    batchYear: '',
+    batchYear: 1960,
     department: '',
     workInfo: {
       orgName: '',
@@ -103,7 +103,7 @@ function Registration() {
   }
 
   const Years = []
-  for (let i = 1960; i < 2020; i++) {
+  for (let i = 1950; i <= new Date().getFullYear()+3; i++) {
     Years.push(i)
   }
 
@@ -112,7 +112,7 @@ function Registration() {
   }, [])
 
   return (
-    <Grid container style={{ padding: "1em 5em" }}>
+    <Grid container className={classes.regContainer}>
       <Grid item xs={12}  >
        {failCheck ?  <CustomizedSnackbars open={open} setOpen={setOpen} severity="error" msg={text} handleClose={handleClose} />:<CustomizedSnackbars open={open} setOpen={setOpen} severity="success"  msg={"Your registration has been initiated . Administrator will review and update soon. !!"} handleClose={handleClose} />}
         <Typography variant="h5" className={classes.regTitle}> Register Your Information</Typography>
@@ -161,6 +161,7 @@ function Registration() {
                 variant="outlined"
                 label="Phone"
                 name="phone"
+                type="number"
                 onChange={formik.handleChange}
                 value={formik.values.phone}
                 error={formik.touched.phone && Boolean(formik.errors.phone)}
@@ -290,6 +291,7 @@ function Registration() {
                 <TextField
                   fullWidth
                   variant="outlined"
+                  type="number"
                   label="Pin"
                   name="currentAddress.pin" // Use dot notation to access nested field
                   onChange={formik.handleChange}
@@ -390,6 +392,7 @@ function Registration() {
                   fullWidth
                   variant="outlined"
                   label="Pin"
+                  type="number"
                   name="permanentAddress.pin" // Use dot notation to access nested field
                   onChange={formik.handleChange}
                   value={formik.values.permanentAddress.pin}
@@ -495,6 +498,7 @@ function Registration() {
                   label="Joined Year"
                   name="workInfo.joinedYear" // Use dot notation to access nested field
                   onChange={formik.handleChange}
+                  type="number"
                   value={formik.values.workInfo.joinedYear}
                   error={
                     formik.touched.workInfo?.joinedYear &&

@@ -11,7 +11,7 @@ export const useStyles = makeStyles( ( theme ) => ( {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    background: "#FFFFFF",
+    background: "#065a62",
     padding: "1em",
     border: " 1px solid rgba(66, 143, 156, 0.25)",
     boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.15)",
@@ -27,13 +27,19 @@ export const useStyles = makeStyles( ( theme ) => ( {
   drawerDiv: {
     display: "flex",
     justifyContent: "space-between",
-    padding: "2em",
+    padding: "1em",
     alignItems: "center",
+    background: "#065a62"
+
   },
   crossIconDes: {
-    width: "1.25em",
-    height: "1.2em",
+    width: "2em",
+    height: "2em",
     cursor: "pointer",
+    border:"2px solid white",
+    borderRadius:"50%",
+    background:"white",
+    boxShadow:"2px 2px 8px 2px #053135"
   },
   contentDiv: {
     padding: "3em",

@@ -615,14 +615,17 @@ export const useStyles = makeStyles(theme => ({
     fontSize: "2.7em",
     padding: "1em 6em",
     ["@media (max-width:767px)"]: {
-      fontSize: "2.1em",
-      padding: "2.5em 1em 0em 1em",
+      fontSize: "2em",
+      padding: "2.5em 0 1em 0em",
     },
   },
   homeSubtitle: {
     textAlign: "-webkit-center",
     fontSize: "1.2em",
-    marginTop: "1.5em"
+    marginTop: "1.5em",
+    ["@media (max-width:767px)"]: {
+      fontSize: "1em",
+    },
   },
   headerSec: {
     padding: "2em 6em",
@@ -634,17 +637,24 @@ export const useStyles = makeStyles(theme => ({
   tagline: {
     color: "#065a62",
     fontStyle: "italic",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    ["@media (max-width:767px)"]: {
+      fontSize: "1em "
+    },
   },
   videoPart: {
     display: "flex",
     justifyContent: "center",
-    padding: "4em"
+    padding: "4em",
   },
   videoTag: {
     boxShadow: "5px 5px 4px 1px #065a62",
     border: "2px solid #065a62",
-    borderRadius: "5px"
+    borderRadius: "5px",
+    ["@media(max-width:767px)"]: {
+      minWidth: '300px',
+      height: "200px"
+    },
   },
   snap: {
     fontWeight: "bold",
@@ -654,7 +664,17 @@ export const useStyles = makeStyles(theme => ({
     padding: "3em",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    ["@media(max-width:767px)"]: {
+      padding: "1.5em",
+    },
+  },
+  article: {
+    padding: "2em",
+    background: "linear-gradient(90deg, rgba(111,108,118,1) 0%, rgba(9,107,121,1) 43%, rgba(0,212,255,1) 100%)",
+    ["@media(max-width:767px)"]: {
+      padding: ".5em",
+    },
   },
   mainCard: {
     padding: "1.2em",
@@ -675,7 +695,10 @@ export const useStyles = makeStyles(theme => ({
   imgCon: {
     width: "10em",
     height: "10em",
-    borderRadius: "50%"
+    borderRadius: "50%",
+    ["@media(max-width:767px)"]: {
+      margin: "auto"
+    },
   },
   name: {
     textAlign: "left",

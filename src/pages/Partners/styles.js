@@ -5,6 +5,13 @@ export const useStyles = makeStyles(() => ({
 	rootContainer: {
 		padding: "2em",
 	},
+	regContainer:{ 
+		padding: "1em 5em",
+		["@media(max-width:767px)"]: {
+			padding: "1em",
+			marginTop:"5em"
+          },
+	 },
 	mainContainer: {
 		justifyContent: "center",
 		maxWidth: "87%",

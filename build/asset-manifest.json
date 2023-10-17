@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fec15a50.css",
-    "main.js": "/static/js/main.9128f88d.js",
+    "main.js": "/static/js/main.c695dd6c.js",
     "static/js/787.4d5f76ff.chunk.js": "/static/js/787.4d5f76ff.chunk.js",
     "static/media/videoAd.mp4": "/static/media/videoAd.3a30c82369448fe9f864.mp4",
     "static/media/aboutVideo.mp4": "/static/media/aboutVideo.1bbf088df418f8025785.mp4",
@@ -17,6 +17,7 @@
     "static/media/homeBackground.png": "/static/media/homeBackground.41ba9008ea90139cfc70.png",
     "static/media/carousel-1.jpg": "/static/media/carousel-1.a3ff01f3d9b69112fdcb.jpg",
     "static/media/pic1.jpg": "/static/media/pic1.2e8f608af69bc1b8b237.jpg",
+    "static/media/hostelpicThumbnail.png": "/static/media/hostelpicThumbnail.51a9f0e71a99db809596.png",
     "static/media/ictThumbnail.jpg": "/static/media/ictThumbnail.cc3ef72eae99fdbffada.jpg",
     "static/media/shillong.jpg": "/static/media/shillong.e48261e98304f3e85dc8.jpg",
     "static/media/pic3.jpeg": "/static/media/pic3.10d5030bc86e5d135430.jpeg",
@@ -58,6 +59,7 @@
     "static/media/rockland.svg": "/static/media/rockland.7d63e1aa28c4ef7c8eed82a5bad8e7ba.svg",
     "static/media/testimonial1.jpeg": "/static/media/testimonial1.2ca46a05e6e5401e0320.jpeg",
     "static/media/testimonial6.jpeg": "/static/media/testimonial6.83adcbbb7b820a67256c.jpeg",
+    "static/media/alumnfive.jpg": "/static/media/alumnfive.bff1946da3d0e3ac7a02.jpg",
     "static/media/serviceLogoFirst.svg": "/static/media/serviceLogoFirst.3b7f2c46eb80c1ad3e6b3eab9e830aa2.svg",
     "static/media/testimonial2.jpeg": "/static/media/testimonial2.aaa857e2696a2e1aca84.jpeg",
     "static/media/clientMsgBack.png": "/static/media/clientMsgBack.18701c6309df08aa95af.png",
@@ -74,11 +76,11 @@
     "index.html": "/index.html",
     "static/media/close.svg": "/static/media/close.31628d4876c66e6ce6453d17291be2ca.svg",
     "main.fec15a50.css.map": "/static/css/main.fec15a50.css.map",
-    "main.9128f88d.js.map": "/static/js/main.9128f88d.js.map",
+    "main.c695dd6c.js.map": "/static/js/main.c695dd6c.js.map",
     "787.4d5f76ff.chunk.js.map": "/static/js/787.4d5f76ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fec15a50.css",
-    "static/js/main.9128f88d.js"
+    "static/js/main.c695dd6c.js"
   ]
 }

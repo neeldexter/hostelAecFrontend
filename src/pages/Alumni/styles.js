@@ -17,10 +17,25 @@ export const useStyles = makeStyles(() => ({
     parentCard: {
         border: "5px solid #ffffff",
         background: "#065a62",
-        marginTop: "-4em",
+        marginTop: "-4.7em",
         borderRadius: "10px",
         padding: "5em 1em 1em 1em",
         boxShadow: "10px 12px 2px -2px #524444"
+    },
+    searchBox:{
+        display: "flex",
+         justifyContent: "space-between",
+          gap: ".5em",
+           padding: "1em",
+            boxShadow: "2px 6px 9px 0px #d4d4d4",
+             marginBottom: "1em" ,
+             ["@media(max-width:767px)"]: {
+                width: '80%',
+                marginTop:"2em",
+                marginTop:"5em",
+                flexDirection:"column",
+                justifyContent:"center"
+              },
     },
     parentContactImg: {
         display: "flex",
@@ -29,7 +44,7 @@ export const useStyles = makeStyles(() => ({
     contactImg: {
         height: "8em",
         width: "8em",
-        border: "5px solid #ffffff",
+        border: "5px solid #204347",
         borderRadius: "50%",
         boxShadow: "2px 3px 6px 0px #524444"
     },
@@ -60,12 +75,27 @@ export const useStyles = makeStyles(() => ({
         margin:"auto",
         maxWidth:"750px",
         height: "40vw",
-    overflowY: "scroll"
+    overflowY: "scroll",
+    ["@media(max-width:767px)"]: {
+        height: "85vh",
+      },
+
     },
     modPicSection: {
         display: "flex",
         justifyContent: "space-around",
-        marginBottom:"2em"
+        marginBottom:"2em",
+        paddingLeft: "3em",
+        ["@media(max-width:767px)"]: {
+            flexDirection: "column",
+            paddingLeft: ".5em",
+          },
+    },
+    addressMain :{
+        marginTop: "1em", marginLeft: "3.5em",
+        ["@media(max-width:767px)"]: {
+            marginLeft: ".5em",
+          },
     },
     contactImgModal: {
         height: "10em",
@@ -109,7 +139,11 @@ export const useStyles = makeStyles(() => ({
         marginBottom:"2em",
         textDecoration:"underline",
         minWidth:"15em",
-        letterSpacing:"1px"
+        letterSpacing:"1px",
+        ["@media(max-width:767px)"]: {
+            width: '90%',
+            minWidth:"5em",
+          },
     },
     textInsideMod: {
         color: "#ffffff",

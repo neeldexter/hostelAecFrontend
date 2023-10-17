@@ -6,7 +6,7 @@ import collapseIcon from "../../images/collapseIcon.png";
 import crossIcon from "../../images/cross.png";
 import flag from "../../images/flag.svg";
 import { Link, useNavigate } from "react-router-dom";
-import AAU_LOGO from "../../images/aau/AAU-logo.png";
+import AAU_LOGO from "../../images/aec/logo.jpg";
 
 function TopBarMobile() {
   const classes = useStyles();
@@ -25,7 +25,7 @@ function TopBarMobile() {
     <div className={classes.roofTop}>
       <div className={classes.fixedContent}>
         <Link to="/" className={classes.link}>
-          <img src={AAU_LOGO} className={classes.mobileLogo} alt="logoMobile" />
+          <img src={AAU_LOGO} className={classes.mobileLogo} style={{borderRadius:"50%"}} alt="logoMobile" />
         </Link>
         <img
           src={collapseIcon}
@@ -36,7 +36,7 @@ function TopBarMobile() {
       </div>
       <Drawer anchor={"top"} open={isOpen} onClose={toggleDrawer}>
         <div role="presentation" className={classes.drawerDiv}>
-          <img src={AAU_LOGO} alt="cross" style={{width:"45px"}}/>
+          <img src={AAU_LOGO} alt="cross" style={{width:"45px",borderRadius:"50%"}} />
           <img
             className={classes.crossIconDes}
             src={crossIcon}
@@ -73,6 +73,14 @@ function TopBarMobile() {
             className={classes.lineItem}
             variant="h5"
             align="left"
+            onClick={() => navigateTo("/alumni-list")}
+          >
+               Alumni
+          </Typography>
+          <Typography
+            className={classes.lineItem}
+            variant="h5"
+            align="left"
             onClick={() => navigateTo("/careers")}
           >
                Contact us
@@ -81,7 +89,7 @@ function TopBarMobile() {
             className={classes.lineItem}
             variant="h5"
             align="left"
-            onClick={() => navigateTo("#")}
+            onClick={() => navigateTo("/login")}
           >
             Login
           </Typography>

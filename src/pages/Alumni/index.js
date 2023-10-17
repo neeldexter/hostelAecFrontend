@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Typography, Grid, Button, TextField, MenuItem, FormControl, InputLabel, Select, Box } from "@material-ui/core";
 import { useStyles } from "./styles";
 import alumniPic from "../../images/KOLicon.jpg"
+import alumniPicSec from "../../images/aec/alumnfive.jpg"
 import humanLogo from "../../images/humanLogo.png"
 import Modal from '@mui/material/Modal';
 import Loader from '../../components/Loader';
@@ -69,7 +70,7 @@ const Alumni = () => {
             {isLoading ? <Loader /> : <>
                 <Grid container item xs={12}>
 
-                    <Grid item xs={12} style={{ display: "flex", justifyContent: "space-between", gap: ".5em", padding: "1em", boxShadow: "2px 6px 9px 0px #d4d4d4", marginBottom: "1em" }}>
+                    <Grid item xs={12} className={classes.searchBox} style={{}}>
                         <div style={{ width: "100%" }}>
                             <TextField
                                 fullWidth
@@ -95,7 +96,7 @@ const Alumni = () => {
                         : <>
                             {alumniList?.map((item, key) => <Grid item xs={12} md={6} lg={3} xl={3} className={classes.parentGrid}>
                                 <div className={classes.parentContactImg}>
-                                    <img className={classes.contactImg} src={alumniPic} alt="alumniPic" />
+                                    <img className={classes.contactImg} src={alumniPicSec} alt="alumniPic" />
                                 </div>
                                 <div className={classes.parentCard}>
                                     <Typography className={classes.textInside}>Name : <span>{item?.firstName} {item?.lastName}</span>  </Typography>
@@ -128,13 +129,13 @@ const Alumni = () => {
 
                                         <Typography varaint="h5" className={classes.modHead}>Alumni Details   </Typography>
                                     </Grid>
-                                    <Grid item xs={12} md={12} lg={9} xl={9} className={classes.modPicSection} style={{ paddingLeft: "3em" }}>
+                                    <Grid item xs={12} md={12} lg={9} xl={9} className={classes.modPicSection}>
                                         <img className={classes.contactImgModal} src={alumniPic} alt="alumniPicMod" />
                                         <div className={classes.parentCardMod}>
                                             <Typography className={classes.textInsideMod}>Name : <span>{alumniModalData?.firstName} {alumniModalData?.lastName}</span>  </Typography>
                                             <Typography className={classes.textInsideMod}>Batch : {alumniModalData?.batchYear}   </Typography>
                                             <Typography className={classes.textInsideMod}>Department : {alumniModalData?.department}   </Typography>
-                                            <Typography className={classes.textInsideMod}>Email : n{alumniModalData?.email}   </Typography>
+                                            <Typography className={classes.textInsideMod}>Email : {alumniModalData?.email}   </Typography>
                                             <Typography className={classes.textInsideMod}>Contact No. : {alumniModalData?.phone}  </Typography>
                                         </div>
                                     </Grid>
@@ -175,7 +176,7 @@ const Alumni = () => {
                                             </div>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={12} md={12} lg={5} xl={5} style={{ marginTop: "1em", marginLeft: "3.5em" }}>
+                                    <Grid item xs={12} md={12} lg={5} xl={5}  className={classes.addressMain}>
                                         <div style={{ padding: ".5em", marginTop: "1em" }}>
                                             <div className={classes.addresParent}>
                                                 <div className={classes.addressTitle}>
