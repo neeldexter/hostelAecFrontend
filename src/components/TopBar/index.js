@@ -45,7 +45,7 @@ function TopBar() {
           </Link>
         </Typography>
         <Typography className={classes.title} variant="h6" >
-          <Link to="#" className={classes.link}>
+          <Link to="/about-us" className={classes.link}>
             About
           </Link>
         </Typography>
@@ -55,7 +55,7 @@ function TopBar() {
           </Link>
         </Typography>
         <Typography className={classes.title} variant="h6" >
-          <Link to="#" className={classes.link}>
+          <Link to="/contact-us" className={classes.link}>
             Contact Us
           </Link>
         </Typography>

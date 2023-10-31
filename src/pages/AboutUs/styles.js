@@ -4,7 +4,7 @@ import aboutPage from "../../images/aboutPage.png";
 export const useStyles = makeStyles(() => ({
 
   mainContainer:{
-    backgroundColor: "#9DB8CC"
+    // backgroundColor: "#9DB8CC"
   },
   backgroundImage: {
     background: `url(${aboutPage})`,
@@ -70,14 +70,15 @@ export const useStyles = makeStyles(() => ({
   },
 
   containerTitle: {
-    marginTop: "1em",
-    marginBottom: "1em",
-    background: "-webkit-linear-gradient(40deg, #428F9C 40%, #FF9800 60%)",
-    WebkitTextFillColor: "transparent",
-    WebkitBackgroundClip: "text",
+    marginTop: ".5em",
+    marginBottom: ".5em",
+    // background: "-webkit-linear-gradient(40deg, #428F9C 40%, #FF9800 60%)",
+    // WebkitTextFillColor: "transparent",
+    // WebkitBackgroundClip: "text",
     fontSize: "3em",
-    fontWeight: "600",
     textAlign: "center",
+    color:"#065a62",
+    fontWeight:"800",
     ["@media (max-width:767px)"]: {
       marginTop: "1.5em",
       fontSize: "1.5em",
@@ -280,7 +281,8 @@ export const useStyles = makeStyles(() => ({
 
   secondInfo: {
     justifyContent: "center",
-    border:'0px dotted blue',
+	  background:"linear-gradient(to right,#7fdbeb,#366d72)",
+    padding:"2em 0",
   },
 
   secondinfoContainer: {

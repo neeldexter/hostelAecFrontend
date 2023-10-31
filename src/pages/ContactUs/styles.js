@@ -1,6 +1,72 @@
 import { makeStyles } from "@material-ui/core";
+import aboutPage from "../../images/aec/cont.jpeg"
+
 
 export const useStyles = makeStyles(theme => ({
+	mainContain:{ 
+		marginTop: "2em",
+		 padding: "1em",
+		//   background: `url(${aboutPage})`,
+		  background:"linear-gradient(to right,#065a62,#62b9c1)",
+		 backgroundSize:"cover"
+	},
+	title: {
+		textAlign: "center",
+		fontSize: "2em",
+		color: "#065a62",
+		fontWeight: "bold",
+		// margin: "1.5em 0"
+	},
+	containerBox:{
+		
+		padding:".5em"
+	},
+	contactCard: {
+		border: "5px solid #ffffff",
+		padding: "5em 1em 1em 1em",
+		background: "#065a62",
+		boxShadow: "10px 12px 2px -2px #524444",
+		marginTop: "-4em",
+		borderRadius: "10px",
+		color:"#ffffff",
+	},
+	parentContactImg: {
+        display: "flex",
+        justifyContent: "center"
+    },
+    contactImg: {
+        height: "8em",
+        width: "8em",
+        border: "6px solid #1d6f64",
+        borderRadius: "10%",
+        boxShadow: "2px 3px 6px 0px #524444"
+    },
+    textInside: {
+        color: "#000000",
+        fontSize: ".8em",
+		fontWeight:"bold",
+		lineHeight:"2em"
+    },
+	parentGrid: {
+        padding: "1em",
+		marginBottom:"1em",
+    },
+	parentCard: {
+        border: "6px solid #065a62",
+        background: "#ffffff",
+        borderRadius: "10px",
+        padding: "1em",
+         boxShadow: "5px 5px 2px -2px #5f5f5f",
+		height:"95%",
+    },
+    parentContactImg: {
+        display: "flex",
+        justifyContent: "center",
+		paddingBottom:"1em",
+		marginBottom:"1em",
+		borderBottom:"3px solid #065a62"
+    },
+
 	templateCard: {
 		border: "2px solid orange",
 		width: "100%",

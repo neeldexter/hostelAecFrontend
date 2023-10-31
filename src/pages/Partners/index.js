@@ -86,7 +86,8 @@ function Registration() {
 
   const submitReg = async (values, resetForm) => {
     try {
-      let dataVal = await axios.post("https://hostel-alumni-m957minwo-neelams-projects.vercel.app/api/alumni", values)
+      // let dataVal = await axios.post("https://hostel-alumni-m957minwo-neelams-projects.vercel.app/api/alumni", values)
+      let dataVal = await axios.post("https://hostel-alumni-jmwontehq-neelams-projects.vercel.app/api/alumni", values)
       if (dataVal.status==201) {
         setOpen(true)
         setFailCheck(false)

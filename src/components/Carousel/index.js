@@ -11,6 +11,12 @@ import carouselImg1 from "../../images/aau/carousel-5.jpg"
 import carouselImg2 from "../../images/aau/carousel-6.jpg"
 import carouselImg3 from "../../images/aau/carousel-1.jpg"
 import carouselImg4 from "../../images/aau/carousel-7.jpg"
+import pic1 from "../../images/aec/pic1.jpg"
+import pic2 from "../../images/aec/pic2.jpeg"
+import pic3 from "../../images/aec/hostelpic.png"
+import pic4 from "../../images/aec/pic4.jpeg"
+import pic5 from "../../images/aec/pic5.jpeg"
+import pic6 from "../../images/aec/pic6.jpeg"
 
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
@@ -19,28 +25,28 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'Kamakhya Temple, Guwahati',
+    label: 'Games and laughter on our vibrant playground – where friendships are born.',
     // imgPath:
       // 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-      imgPath: carouselImg1
+      imgPath: pic1
   },
   {
-    label: 'Bihu, regional festival of Assam',
+    label: 'Elevate Your Stay, Create Memories: Prestigious Hostel #1 - Your Next Destination.',
     // imgPath:
     //   'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-    imgPath: carouselImg2
+    imgPath: pic5
   },
   {
-    label: 'Elephant Safari, Manas National Park',
+    label: 'Prestigious Hostel #1: Where Every Corner Beckons with Warmth and Comfort.',
     // imgPath:
     //   'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-    imgPath: carouselImg3
+    imgPath: pic3
   },
   {
-    label: 'Umananda, Smallest river island in the world',
+    label: 'Your Home Away from Home: Discover the Prestigious Hostel Experience',
     // imgPath:
     //   'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-    imgPath: carouselImg4
+    imgPath: pic6
   },
 ];
 
@@ -62,7 +68,11 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 1000, flexGrow: 1, border:"10px solid white" }}>
+    <Box sx={{ maxWidth: 1000, flexGrow: 1, border:"10px solid white",          border:" 6px solid #065a62",
+    padding: "1em",
+    background: "#ffffff",
+    boxShadow: "5px 5px 2px -2px #5f5f5f",
+    borderRadius: "10px", }}>
       <Paper
         square
         elevation={0}
@@ -74,7 +84,7 @@ function SwipeableTextMobileStepper() {
           bgcolor: 'background.default',
         }}
       >
-        <Typography>{images[activeStep].label}</Typography>
+        <Typography style={{fontSize:"1.5em", fontWeight:"bold", color:"#065a62",textShadow:"3px 3px #d8cccc"}}>{images[activeStep].label}</Typography>
       </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -83,7 +93,7 @@ function SwipeableTextMobileStepper() {
         enableMouseEvents
       >
         {images.map((step, index) => (
-          <div key={step.label}>
+          <div key={step.label} style={{marginTop:"1em"}}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
@@ -92,7 +102,10 @@ function SwipeableTextMobileStepper() {
                   display: 'block',
                 //   maxWidth: 400,
                   overflow: 'hidden',
-                  width: '100%',
+                  width: 1000,
+                  borderRadius:"10px",
+                  boxShadow: "5px 5px 2px -2px #5f5f5f",
+                  // border:" 6px solid #065a62",
                 }}
                 src={step.imgPath}
                 alt={step.label}
@@ -101,35 +114,6 @@ function SwipeableTextMobileStepper() {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      {/* <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        // nextButton={
-        //   <Button
-        //     size="small"
-        //     onClick={handleNext}
-        //     disabled={activeStep === maxSteps - 1}
-        //   >
-        //     Next
-        //     {theme.direction === 'rtl' ? (
-        //       <KeyboardArrowLeft />
-        //     ) : (
-        //       <KeyboardArrowRight />
-        //     )}
-        //   </Button>
-        // }
-        // backButton={
-        //   <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-        //     {theme.direction === 'rtl' ? (
-        //       <KeyboardArrowRight />
-        //     ) : (
-        //       <KeyboardArrowLeft />
-        //     )}
-        //     Back
-        //   </Button>
-        // }
-      /> */}
     </Box>
   );
 }
